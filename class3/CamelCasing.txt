@@ -1,0 +1,30 @@
+class name should always start with capital letter
+eg:Bhavith,Swathi,Sanath,BhavithSannidani
+
+method name should always start with small letter
+eg:bhavith(),swathi(int a),sanath(String[] names)
+
+if u have two or more words in method name then u should start the 2nd word with capitol letter
+eg:bhavithSannidani(),swathiChandana(int a)
+
+variable naming:
+
+variable name should always start with small letter
+eg: int age=10;
+
+if u have more than two words in ur name then u need to start 2nd word with capital letter
+eg:int bhavithSannidani;
+
+u can use $ to start a variable
+eg:int $age;
+
+u can use _ to start a variable
+eg:int _age;
+
+u can't strat a variable with numeric value
+
+eg:int bhavith_sannidani;
+
+eg:int $age1;
+eg:int $age2;
+eg:int $age3;
