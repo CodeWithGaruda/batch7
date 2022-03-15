@@ -11,7 +11,8 @@ public class Prg3 {
 
     public static void sample() {
         System.out.println("this is sample method");
-        System.out.println(age);
+        // can't access the variable cuz it is in main method
+        // System.out.println(age);
 
     }
 
