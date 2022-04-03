@@ -25,6 +25,8 @@ class Sanath {
                 throw e;
             } catch (ServiceNotStartedException e1) {
                 e1.printStackTrace();
+            } finally {
+                scanner.close();
             }
         } else {
             System.out.println("please wait....!");
