@@ -11,7 +11,12 @@ class Producer extends Thread {
     public void run() {
         int i = 0;
         while (true) {
-            mediator.put(++i);
+            try {
+                mediator.put(++i);
+            } catch (InterruptedException e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
+            }
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {
@@ -31,7 +36,11 @@ class Consumer extends Thread {
 
     public void run() {
         while (true) {
-            mediator.get();
+            try {
+                mediator.get();
+            } catch (InterruptedException e1) {
+                e1.printStackTrace();
+            }
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {
@@ -45,27 +54,19 @@ class Mediator {
     int num;
     boolean value = false;
 
-    synchronized void put(int num) {
+    synchronized void put(int num) throws InterruptedException {
         while (value) {
-            try {
-                wait();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            this.num = num;
-            System.out.println("producer:" + num);
-            value = true;
-            notify();
+            wait();
         }
+        this.num = num;
+        System.out.println("producer:" + num);
+        value = true;
+        notify();
     }
 
-    synchronized void get() {
+    synchronized void get() throws InterruptedException {
         while (!value) {
-            try {
-                wait();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            wait();
         }
         System.out.println("consumer:" + num);
         value = false;
