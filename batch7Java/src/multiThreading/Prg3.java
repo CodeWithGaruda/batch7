@@ -59,18 +59,18 @@ class Sanath extends Thread {
 public class Prg3 {
     public static void main(String[] args) throws Exception {
         System.out.println("main started");
-        Swathi swathi = new Swathi();
-        Bhavith bhavith = new Bhavith();
-        Sanath sanath = new Sanath();
 
-        Thread swathiThread = new Thread(swathi, "swathi Thread");
+        Swathi swathiThread = new Swathi();
+        swathiThread.setName("swathi");
+        Bhavith bhaviThread = new Bhavith();
+        bhaviThread.setName("bhavith");
+        Sanath sanatThread = new Sanath();
+        sanatThread.setName("sanathThread");
+
         swathiThread.start();
-
-        Thread bhaviThread = new Thread(bhavith, "bhavith thread");
         bhaviThread.start();
-
-        Thread sanatThread = new Thread(sanath, "sanath Thread");
         sanatThread.start();
+
         System.out.println("main ended");
     }
 }

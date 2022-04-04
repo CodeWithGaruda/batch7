@@ -8,22 +8,19 @@ public class Prg4 {
         Bhavith bhavith = new Bhavith();
         Sanath sanath = new Sanath();
 
-        Thread swathiThread = new Thread(swathi, "swathi Thread");
-        swathiThread.start();
+        swathi.start();
 
-        Thread bhaviThread = new Thread(bhavith, "bhavith thread");
-        bhaviThread.start();
+        bhavith.start();
 
-        Thread sanatThread = new Thread(sanath, "sanath Thread");
-        sanatThread.start();
+        sanath.start();
 
-        System.out.println(swathiThread.isAlive());
+        System.out.println(swathi.isAlive());
 
-        swathiThread.join();
-        bhaviThread.join();
-        sanatThread.join();
+        swathi.join();
+        bhavith.join();
+        sanath.join();
 
-        System.out.println(swathiThread.isAlive());
+        System.out.println(swathi.isAlive());
 
         System.out.println("main ended");
     }
