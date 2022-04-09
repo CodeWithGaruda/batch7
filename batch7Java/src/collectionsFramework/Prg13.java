@@ -1,7 +1,6 @@
 package collectionsFramework;
 
 import java.util.HashMap;
-import java.util.TreeMap;
 
 public class Prg13 {
     public static void main(String[] args) {
