@@ -16,7 +16,7 @@ public class Prg7 {
         System.out.println(hashSet);
         System.out.println(hashSet.contains(25));
         // to retain insertion order
-        LinkedHashSet hashSet2 = new LinkedHashSet<>();
+        LinkedHashSet<Integer> hashSet2 = new LinkedHashSet<>();
         hashSet2.add(100);
         hashSet2.add(50);
         hashSet2.add(150);
